@@ -40,7 +40,7 @@ stemmer = PorterStemmer()
 # Stemming
 for i in range(len(sentences)):
     words = nltk.word_tokenize(sentences[i])
-    words = [stemmer.stem(word) for word in words if word not in set(stopwords.words('english'))]
+    words = [stemmer.stem(word.lower()) for word in words if word.lower() not in set(stopwords.words('english'))]
     sentences[i] = ' '.join(words)   
     
     
